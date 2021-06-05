@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // gap: 40px;
+  align-items: center;
+
+  // h3 {
+  //   line-height: 4em;
+  // }
+}
+
+.projects {
+  margin: 4vw;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 250px));
+  place-items: center;
+  place-content: center;
+  gap: 2vw;
+  // border: 1px solid crimson;
+}

@@ -1,12 +1,12 @@
-import BaseApparelComingSoonMaster from "../pages/BaseApparelComingSoonMaster";
-import SocialMediaDashboardWithThemeSwitcherMaster from "../pages/SocialMediaDashboardWithThemeSwitcherMaster";
-import IntroComponentWithSignupFormMaster from "../pages/IntroComponentWithSignupFormMaster";
-import BlogrLandingPageMain from "../pages/BlogrLandingPageMain";
-import CodingBootcampTestimonialsSliderMaster from "../pages/CodingBootcampTestimonialsSliderMaster";
-import HuddleLandingPageWithCurvedSectionsMaster from "../pages/HuddleLandingPageWithCurvedSectionsMaster";
-import PingComingSoonPageMaster from "../pages/PingComingSoonPageMaster";
-import ArticlePreviewComponentMaster from "../pages/ArticlePreviewComponentMaster";
-import FourCardFeatureSectionMaster from "../pages/FourCardFeatureSectionMaster";
+import BaseApparelComingSoonMaster from "@pages/BaseApparelComingSoonMaster";
+import SocialMediaDashboardWithThemeSwitcherMaster from "@pages/SocialMediaDashboardWithThemeSwitcherMaster";
+import IntroComponentWithSignupFormMaster from "@pages/IntroComponentWithSignupFormMaster";
+import BlogrLandingPageMain from "@pages/BlogrLandingPageMain";
+import CodingBootcampTestimonialsSliderMaster from "@pages/CodingBootcampTestimonialsSliderMaster";
+import HuddleLandingPageWithCurvedSectionsMaster from "@pages/HuddleLandingPageWithCurvedSectionsMaster";
+import PingComingSoonPageMaster from "@pages/PingComingSoonPageMaster";
+import ArticlePreviewComponentMaster from "@pages/ArticlePreviewComponentMaster";
+import FourCardFeatureSectionMaster from "@pages/FourCardFeatureSectionMaster";
 
 const routes = [
   { component: BaseApparelComingSoonMaster, path: "/projects/BACSM", id:"BACSM"},

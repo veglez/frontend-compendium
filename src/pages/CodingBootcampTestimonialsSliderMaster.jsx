@@ -1,35 +1,50 @@
+import React, { useState } from 'react';
+import Styles from '@styles/CBTSM.module.scss';
+import IconNext from '@components/CBTSM/IconNext';
+import IconPrev from '@components/CBTSM/IconPrev';
+import data from '@components/CBTSM/data';
 
-    import React from "react";
-    import Styles from "@styles/CBTSM.module.scss";
-    import iconPrev from "@images/CBTSM/icon-prev.svg";
-import patternQuotes from "@images/CBTSM/pattern-quotes.svg";
-import patternBg from "@images/CBTSM/pattern-bg.svg";
-import patternCurve from "@images/CBTSM/pattern-curve.svg";
-import iconNext from "@images/CBTSM/icon-next.svg";
+const CodingBootcampTestimonialsSliderMaster = () => {
+  const datos = data.results;
+  const size = datos.length;
+  const [index, setIndex] = useState(0);
 
-    
-    const CodingBootcampTestimonialsSliderMaster = () => {
-    return(
-            <div className={Styles.container}>
-            <h1> Estas en la página CodingBootcampTestimonialsSliderMaster </h1>
-            <section>“ I’ve been interested in coding for a while but never taken the jump, until now. 
-  I couldn’t recommend this course enough. I’m now in the job of my dreams and so 
-  excited about the future. ”
-
-  Tanya Sinclair
-  UX Engineer
-
-  “ If you want to lay the best foundation possible I’d recommend taking this course. 
-  The depth the instructors go into is incredible. I now feel so confident about 
-  starting up as a professional developer. ”
-
-  John Tarkpor
-  Junior Front-end Developer
-  
-  </section>
+  return (
+    <div className={Styles.container}>
+      <section className={Styles.testimonials}>
+        <article className={Styles.testimonial}>
+          <picture>
+            <img src={datos[index].image} alt={datos[index].img_alt} />
+            <div className={Styles.buttons}>
+              <button
+                onClick={() =>
+                  index - 1 < 0 ? setIndex(size - 1) : setIndex(index - 1)
+                }
+              >
+                <IconPrev />
+              </button>
+              <button
+                onClick={() =>
+                  index + 1 >= size ? setIndex(0) : setIndex(index + 1)
+                }
+              >
+                <IconNext />
+              </button>
             </div>
-        );
-    };
-    
+          </picture>
+          <header className={Styles.testimonial__info}>
+            <p className={Styles.testimonial__quote}>{datos[index].quote}</p>
+            <div className={Styles.testimonial__hgroup}>
+              <h2 className={Styles.testimonial__name}>{datos[index].name}</h2>
+              <h3 className={Styles.testimonial__jobTitle}>
+                {datos[index].job_title}
+              </h3>
+            </div>
+          </header>
+        </article>
+      </section>
+    </div>
+  );
+};
 
-    export default CodingBootcampTestimonialsSliderMaster;
+export default CodingBootcampTestimonialsSliderMaster;

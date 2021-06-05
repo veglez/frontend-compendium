@@ -15,8 +15,10 @@ module.exports = {
     alias: {
       '@icons': path.join(__dirname, 'src/assets/icons-technologies'),
       '@diplomas': path.resolve(__dirname, 'src/assets/diplomas-images'),
-      '@components': path.resolve(__dirname, 'src/components/'),
+      '@components': path.resolve(__dirname, 'src/components'),
       '@images': path.resolve(__dirname, 'src/assets/images'),
+      '@styles': path.resolve(__dirname, 'src/styles'),
+      '@pages': path.resolve(__dirname, 'src/pages'),
     },
   },
   module: {

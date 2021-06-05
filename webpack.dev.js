@@ -10,8 +10,8 @@ module.exports = merge(common, {
     port: 8020,
     open: true,
     contentBase: [
-      path.join(__dirname, './public'),
-      path.join(__dirname, './src/assets/diplomas'),
+      path.join(__dirname, './src/assets'),
+      path.join(__dirname, './src/assets/images'),
     ],
     historyApiFallback: true,
     // compress: true,

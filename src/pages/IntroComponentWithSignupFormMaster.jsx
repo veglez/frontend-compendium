@@ -1,33 +1,26 @@
+import React from 'react';
+import ButtonPrice from '@components/ICWSFM/atom/ButtonPrice';
+import Form from '@components/ICWSFM/molecule/Form';
+import Styles from '@styles/ICWSFM.module.scss';
+const IntroComponentWithSignupFormMaster = () => {
+  return (
+    <main className={Styles.container}>
+      <section className={Styles.main}>
+        <header className={Styles.header}>
+          <h1>Learn to code by watching others</h1>{' '}
+          <p>
+            See how experienced developers solve problems in real-time. Watching
+            scripted tutorials is great, but understanding how developers think
+            is invaluable.
+          </p>
+        </header>
+        <div className={Styles.body}>
+          <ButtonPrice />
+          <Form />
+        </div>
+      </section>
+    </main>
+  );
+};
 
-    import React from "react";
-    import Styles from "@styles/ICWSFM.module.scss";
-    import iconError from "@images/ICWSFM/icon-error.svg";
-
-    
-    const IntroComponentWithSignupFormMaster = () => {
-    return(
-            <div className={Styles.container}>
-            <h1> Estas en la página IntroComponentWithSignupFormMaster </h1>
-            <section>Learn to code by watching others
-
-  See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
-  but understanding how developers think is invaluable. 
-
-  
-
-  First Name 
-  Last Name 
-  Email Address
-  Password
-
-   
-
-  
-  
-  </section>
-            </div>
-        );
-    };
-    
-
-    export default IntroComponentWithSignupFormMaster;
+export default IntroComponentWithSignupFormMaster;

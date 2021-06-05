@@ -6,7 +6,7 @@ import json
 
 
 
-dinamicImport = 'import {0} from "../pages/{0}"'
+dinamicImport = 'import {0} from "@pages/{0}"'
 dinamic_page_imports= ''
 
 
@@ -18,7 +18,7 @@ actual = Path.cwd()
 # isProject = re.compile(r'^\.\/(?:[a-z]+-)+[a-z]+$')
 #se asume que estamos en una carpeta donde se descomprimen los archivos de frontendmentor tal cual vienen escritos, solo extraer y listo
 isProject = re.compile(r'(?:[a-z]+-)+[a-z]+$') 
-finalDesign = re.compile(r'(desktop|mobile)-design\.jpg$')
+finalDesign = re.compile(r'(desktop|mobile)-design.*\.jpg$')
 renglones = re.compile(r'.+')
 results = []
 rutas = {
@@ -36,6 +36,7 @@ def create_folder_structure(file_absolute_path):
     return True
 
 def CreateFile(file_absolute_path, data_of_file):
+    if file_absolute_path.exist(): return True
     if create_folder_structure(file_absolute_path):
         with open(file_absolute_path, 'w') as newFile:
             newFile.write(data_of_file)
@@ -44,19 +45,23 @@ def createPageComponent(name_of_page_component, dinamic_page_imports, stylesheet
     component_layout = '''
     import React from "react";
     import Styles from "{style}";
-    {icons}
+    {images}
     
     const {component_name} = () => {{
     return(
             <div className={{Styles.container}}>
-            <h1> Estas en la página {component_name} </h1>
-            <section>{mainContent}</section>
+                <h1> Estas en la página {component_name} </h1>
+                <section>{mainContent}</section>
             </div>
         );
     }};
     
 
-    export default {component_name};'''.format(component_name=name_of_page_component, icons=dinamic_page_imports, style='@styles/{0}.module.scss'.format(stylesheet_acronnym), mainContent=mainText)
+    export default {component_name};'''.format(
+        component_name=name_of_page_component, 
+        images=dinamic_page_imports, 
+        style='@styles/{0}.module.scss'.format(stylesheet_acronnym), 
+        mainContent=mainText)
 
     stylesheet_layout= '''
     .container {
@@ -157,6 +162,7 @@ def doTheMagic():
         if 'design' in root:
             for image in files:
                 if finalDesign.search(image): #verificamos que sea del tipo desktop-design or mobile-design
+                    # print("estamos recogiendo la imagen mobile o desktop-design {} en root: {}".format(image, root))
                     designSrc = Path(root, image)
                     dst = Path.joinpath(actual, 'src/assets/projects',project_acronym+'-'+image)
                     create_folder_structure(dst)
@@ -173,9 +179,10 @@ def doTheMagic():
         if 'images' in root:
             dinamic_page_imports=''
             for image in files:
+                PosixImage = Path(image)
                 if 'favicon' not in image:
                     #filtramos solo los archivos svg
-                    if image[-3:] == 'svg':  #and 'bg' not in image:  #Solo convertimos a componentes los que no sean svg de fondo
+                    if PosixImage.suffix in ['.svg', '.png', '.jpg', '.jpeg' ]:  #and 'bg' not in image:  #Solo convertimos a componentes los que no sean svg de fondo
                         imageNameInit, *rest = image[:-4].split('-') 
                         camelCaseName = ''.join([imageNameInit, *map(lambda x: x.capitalize(), rest )])
                         # page_name = createSVGJSX(image, root, project_acronym)    #Aqui se crean los archivos svg a componentes de react
