@@ -4,8 +4,8 @@ import React from 'react';
 
 const one = ({ classes, props }) => (
   <>
-    Search throught the input path files with the name structure of
-    frontendmentor projects and unzip it.
+    It searches the input path for zip files and unzips them in the input path,
+    if the file already exists then it doesn't extract it.
   </>
 );
 const two = ({ classes, props }) => (
@@ -17,17 +17,16 @@ const two = ({ classes, props }) => (
 );
 const three = ({ classes, props }) => (
   <>
-    Iterate over the files of the project folder and looks for: images needed
-    for the project, the main text and the final design (mobile and desktop
-    version).
+    It iterates over the files of the project folder and looks for: images
+    needed for the project, the main text and the final design (mobile and
+    desktop version).
   </>
 );
 const four = ({ classes, props }) => (
   <>
-    For images that correspond to the final design project, the algorithm copy
-    those files in the{' '}
-    <span className={classes.route}>src/assets/projects</span> folder. It uses
-    the actual path from where the python script is running.
+    For images that correspond to the final design of the project, the algorithm
+    copy those files in the{' '}
+    <span className={classes.route}>src/assets/projects</span> folder.
   </>
 );
 
@@ -76,9 +75,9 @@ const eight = ({ classes, props }) => (
 );
 const nine = ({ classes, props }) => (
   <>
-    Also has it can be seen in the picture of the template, the algorith also
-    include an import for a module stylesheet in sass with initial styles, it is
-    created at{' '}
+    Also, as it can be seen in the picture of the template, the algorith
+    includes an import for a module stylesheet in sass with initial styles, it
+    is created at{' '}
     <span className={classes.route}>
       src/styles/<span className={classes.variable}>acronym</span>
       .module.scss

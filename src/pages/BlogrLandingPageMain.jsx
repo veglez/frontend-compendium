@@ -102,7 +102,10 @@ const BlogrLandingPageMain = () => {
 
       <section className={Styles.section3}>
         <picture className={Styles.section3__picture}>
-          <source media='(min-width: 1440px)' src={illustrationLaptopDesktop} />
+          <source
+            media='(min-width: 1440px)'
+            srcSet={illustrationLaptopDesktop}
+          />
           <img src={illustrationLaptopMobile} alt='illustration laptop' />
         </picture>
         <article className={Styles.article1S3}>

@@ -12,6 +12,7 @@ module.exports = merge(common, {
     contentBase: [
       path.join(__dirname, './src/assets'),
       path.join(__dirname, './src/assets/images'),
+      path.join(__dirname, './src/assets/projects'),
     ],
     historyApiFallback: true,
     // compress: true,

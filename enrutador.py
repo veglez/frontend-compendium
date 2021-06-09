@@ -3,6 +3,8 @@ import re
 from pathlib import Path
 from shutil import copyfile
 import json
+from zipfile import ZipFile
+import zipfile
 
 
 
@@ -10,10 +12,10 @@ dinamicImport = 'import {0} from "@pages/{0}"'
 dinamic_page_imports= ''
 
 
-frontendMentor_folders = Path('/home/veglez/Projects/frontend/frontendmentor')
+frontendMentor_folders = Path('/home/veglez/Projects/frontend/frontendmentor/newTest')
 
 #dirección del proyecto
-actual = Path.cwd()
+actual = Path(os.path.realpath(__file__)).parent
 
 # isProject = re.compile(r'^\.\/(?:[a-z]+-)+[a-z]+$')
 #se asume que estamos en una carpeta donde se descomprimen los archivos de frontendmentor tal cual vienen escritos, solo extraer y listo
@@ -36,7 +38,7 @@ def create_folder_structure(file_absolute_path):
     return True
 
 def CreateFile(file_absolute_path, data_of_file):
-    if file_absolute_path.exist(): return True
+    if file_absolute_path.exists(): return True
     if create_folder_structure(file_absolute_path):
         with open(file_absolute_path, 'w') as newFile:
             newFile.write(data_of_file)
@@ -168,7 +170,7 @@ def doTheMagic():
                     create_folder_structure(dst)
                     copyfile(designSrc, dst)            
                     key = image.split('-')[0]
-                    source = './projects/{0}-{1}'.format(project_acronym, image)
+                    source = '/projects/{0}-{1}'.format(project_acronym, image)
                     item[key] = source
             item['id'] = project_acronym
             item['title'] = capitalizedProjectName
@@ -213,8 +215,6 @@ def doTheMagic():
     create_folder_structure(json_output)  #IMPORTANTE esto también sirve para el archivo routes, no es necesario volverlo a llamar para routes.js
     with open(json_output, 'w') as f:
         json.dump({"results": results}, f)
-
-
     imports = ''
     variable = ''
     filename_routes = 'routes.js'
@@ -230,33 +230,17 @@ def doTheMagic():
         routesFile.write(final_text)
 
 
+#this unzip the file if the folders doesn't exists
+for zip in frontendMentor_folders.iterdir():
+    #print(zip.parent)
+    if zip.suffix == '.zip':
+        folderProject = Path(zip.parent, zip.stem)
+        #print(folderProject)
+        if not folderProject.exists():
+            print("folder {} doesn't exist".format(folderProject))
+            with ZipFile(str(zip), 'r') as zipFile:
+            #if it runs without parameters, it will extract the files
+            #from the path where the script is running
+                zipFile.extractall(zip.parent) 
+
 doTheMagic()
-
-
-# HASTA AQUI LO QUE SUCEDE ES:
-#     1. Itera en la carpeta de "frontendmentor" para obtener las imagenes
-#     2. Selecciona las imagenes necesarias y obtiene los datos para generar 2 archivos:
-#         2.1 "projectData.json" sirve para mostrar en la ruta "/projects" los proyectos hechos
-#         2.2 "routes.js" sirve para el enturado
-
-# Para que todo funcione correctamente debe existir un componente página con el nombre COMPLETO del proyecto
-
-#ahora lo que falta....
-# Por cada carpeta llamada imagenes obtener las imagenes, excluir favicon-32x32.png
-#por cada png o jpg copiará el archivo a la carpeta Path.joinpath(ruta_portafolio, 'src/assets/frontendmentor', )
-#por cada SVG:
-    #1.Guardarlo su contenido (el html) en un archivo .jsx ubicado en Path.joinpath(ruta_portafolio, 'src/components', project_acronym)
-    #2.Cambiar sus atributos a camelCase (si aplica) ejemplo:
-    #   2.1 Convertir stroke-width --> strokeWidth 
-    #El formato del nuevo svg.jsx debe ser:
-        # import React from 'react'
-        # const PascalCaseFullSvgName = () => {
-        #     return (
-        #         <svg>
-        #           ...
-        #         </svg>
-        #     );
-        # };
-        # export default PascalCaseFullSvgName;
-
-

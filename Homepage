@@ -1,0 +1,32 @@
+Bienvenido a el compendio de proyectos de "Frontend mentor"
+
+Introduction
+Frontendmentor.io es una página conocida por publicar diseños de páginas web con el fin de que los que entramos al mundo del frontend podamos practicar nuestras habilidades aprendidas. Es un excelente sitio con retos de diferentes grados de dificultad, aunque casi todos los ejercicios son de una sóla página; es por ese motivo que se me ocurrió juntarlos todos en un solo proyecto con el fin de practicar el enrutado de páginas como en un sitio web real.
+
+Para mi primer proyecto decidí descargar el archivo zip que proporciona la página, descomprimirlo y luego acomodar los recursos para crear el sitio usando react; cuando llegué al tercer ejercicio se me hizo muy repetitivo lo que tenía que hacer y fue cuando se me vino a la mente realizar un script en python que hiciera todo ese proceso tedioso por mi.
+
+
+Why python?
+Python ha sido para un mí un lenguaje en el que me apoyo como primera opción para automatizar tareas simples y tediosas, y esto ha sido así desde que lo conocí en la universidad en las clases de inteligencia artificial. He manejado varias librerías: numpy, pandas, opencv, tkinter, etc, por lo que conozco la gran versatilidad que tiene este lenguaje de programación y eso ha hecho que se convierta en mi lenguaje favorito. Con python es posible realizar actividades muy complejas de una forma muy sencilla, es dificil resistirse a usarlo.
+
+¿Qué hace exactamente el script de python en este proyecto?
+Con el fin de agilizar el proceso a la hora de realizar ejercicios, el algoritmo se encarga de configurar todo el espacio de trabajo, se encarga de copiar los archivos necesarios en las rutas correspondientes y crear los archivos con la **sintaxis de react**, incluyendo las importaciones de las imagenes que se usarán y también incluyendo una hoja de estilos para la página principal con un estilo precargado, también agrega el contenido principal del ejercicio. Después de correr el script se encargará unicamente de crear los archivos que no hayan sido creado, de esta forma se evitar sobreescribir el trabajo anterior. Además, como paso final crea 2 archivos necesarios: el primero para hacer un enrutamiento de cada proyecto nuevo que se vaya agregando y el segundo para presentar el proyecto en cards.
+
+Los pasos que sigue el algoritmo para cumplir este objetivo son: 
+
+
+Welcome to the "Frontend mentor" project compendium
+
+Introduction
+Frontendmentor.io is a page known for publishing web page designs so that those of us who enter the world of the frontend can practice our learned skills. It is an excellent site with challenges of varying degrees of difficulty, although almost all the exercises are on a single page; That is why it occurred to me to put them all together in a single project in order to practice page routing just like on a real website.
+
+For my first project I decided to download the zip file provided by the page, unzip it and then arrange the resources to create the site using react; When I got to the third exercise, what I had to do became very repetitive and that was when it came to my mind to make a python script that would do all that tedious process for me.
+
+
+Why python?
+Python has been for me a language that I rely on as the first option to automate simple and tedious tasks, and this has been the case since I met it at university in artificial intelligence classes. I have managed several libraries: numpy, pandas, opencv, tkinter, etc, so I know the great versatility that this programming language has and that has made it my favorite language. With python it is possible to perform very complex activities in a very simple way, it is difficult to resist using it.
+
+What exactly does the python script do in this project?
+In order to speed up the process when carrying out exercises, the algorithm is in charge of configuring the entire workspace, is in charge of copying the necessary files in the corresponding paths and creating the files with the ** react syntax ** , including imports of the images to be used and also including a style sheet for the main page with a preloaded style, it also adds the main content of the exercise. After running the script, it will only be in charge of creating the files that have not been created, in this way avoiding overwriting the previous work. In addition, as a final step, create 2 necessary files: the first to make a routing of each new project that is added and the second to present the project on cards.
+
+The steps that the algorithm follows to meet this objective are:

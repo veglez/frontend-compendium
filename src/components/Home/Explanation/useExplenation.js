@@ -8,4 +8,9 @@ export const useExplanation = makeStyles({
     transform: 'translate(-50%, -50%)',
     width: 'min(100%, 470px)',
   },
+  container: {
+    width: '100%',
+    // wordBreak: 'break-word',
+    overflowWrap: 'break-word',
+  },
 });

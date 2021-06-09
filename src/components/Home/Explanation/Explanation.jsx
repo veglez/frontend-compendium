@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import {
   Box,
-  IconButton,
   List,
   ListItem,
-  ListItemIcon,
   ListItemText,
   Modal,
   Typography,
@@ -20,15 +18,17 @@ const Explanation = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <Box>
+    <Box className={classes2.container}>
       <Typography>
-        The steps the algorith follows to complete its task are:
+        The algorithm get as an input the directory absolute path where the
+        downloaded zip are storage. Then, the steps the algorithm follows to
+        complete its task are:
       </Typography>
       <List className={classes.list}>
         {steps.map((content, i) => {
           return (
             <Item
-              iconSize={30}
+              iconSize={10}
               mainContent={content}
               classes={classes}
               extra={{ function: setOpen }}
@@ -36,126 +36,6 @@ const Explanation = () => {
             />
           );
         })}
-        {/* <ListItem divider dense>
-          <ListItemIcon>
-            <RiArrowDropRightFill size={30} />
-          </ListItemIcon>
-          <ListItemText
-            primary={`<strong>Search</strong> throught the input path files with the name structure of frontendmentor projects and unzip it`}
-          />
-        </ListItem>
-        <ListItem divider dense>
-          <ListItemIcon>
-            <RiArrowDropRightFill size={30} />
-          </ListItemIcon>
-          <ListItemText primary="For each zip file, the algorithm storage the name of the folder in memory and use it for create an acronym using the first letter of each word the project name has, the acronym its gonna be usefull for ID's" />
-        </ListItem>
-        <ListItem divider dense>
-          <ListItemIcon>
-            <RiArrowDropRightFill size={30} />
-          </ListItemIcon>
-          <ListItemText primary='Iterate over the files of the project folder and looks for: images needed for the project, the main text and the final design (mobile and desktop version)' />
-        </ListItem>
-        <ListItem divider dense>
-          <ListItemIcon>
-            <RiArrowDropRightFill size={30} />
-          </ListItemIcon>
-          <ListItemText
-            primary={
-              <span>
-                For images that correspond to the final design project, the
-                algorithm copy those files in a the{' '}
-                <span className={classes.route}>src/assets/projects</span>{' '}
-                folder on this compendium project
-              </span>
-            }
-          />
-        </ListItem>
-        <ListItem divider dense>
-          <ListItemIcon>
-            <RiArrowDropRightFill size={30} />
-          </ListItemIcon>
-          <ListItemText
-            primary={
-              <span>
-                For images that correspond to the project, also copy those files
-                but in the{' '}
-                <span className={classes.route}>
-                  src/assets/images/
-                  <span className={classes.variable}>acronym</span>/
-                  <span className={classes.variable}>imageName</span>
-                </span>{' '}
-                folder
-              </span>
-            }
-          />
-        </ListItem>
-        <ListItem divider dense>
-          <ListItemIcon>
-            <RiArrowDropRightFill size={30} />
-          </ListItemIcon>
-          <ListItemText
-            primary={
-              <span>
-                After copying the images it will storage in memory a string of
-                each image with the format{' '}
-                <span className={classes.route}>
-                  import <span className={classes.variable}>imageName</span>{' '}
-                  from @images/
-                  <span className={classes.variable}>acronym</span>/
-                  <span className={classes.variable}>imageName</span>
-                </span>
-                , it will be usefull for the creation of the page component in
-                react
-              </span>
-            }
-          />
-        </ListItem>
-        <ListItem divider dense>
-          <ListItemIcon>
-            <RiArrowDropRightFill size={30} />
-          </ListItemIcon>
-          <ListItemText primary='The only data left is the main content, it will be extracted from the index.html inside the current frontendmentor folder project' />
-        </ListItem>
-        <ListItem divider dense>
-          <ListItemIcon>
-            <RiArrowDropRightFill size={30} />
-          </ListItemIcon>
-          <ListItemText
-            primary={
-              <span>
-                With all this information now the page component can be created
-                and save it in{' '}
-                <span className={classes.route}>
-                  src/pages/
-                  <span className={classes.variable}>page_name</span>
-                </span>{' '}
-                The component will be build from the next template:{' '}
-                <IconButton onClick={() => setOpen(true)}>
-                  <Photo />
-                </IconButton>
-              </span>
-            }
-          />
-        </ListItem>
-        <ListItem divider dense>
-          <ListItemIcon>
-            <RiArrowDropRightFill size={30} />
-          </ListItemIcon>
-          <ListItemText
-            primary={
-              <span>
-                Also has it can be seen in the picture of the template, the
-                algorith also include an import for a module stylesheet in sass
-                with initial styles, it is created at{' '}
-                <span className={classes.route}>
-                  src/styles/<span className={classes.variable}>acronym</span>
-                  .module.scss
-                </span>
-              </span>
-            }
-          />
-        </ListItem>*/}
       </List>
       <Modal open={open} onClose={() => setOpen(false)}>
         <img
@@ -226,7 +106,9 @@ const Explanation = () => {
       </Typography>
       <Typography>
         When the algorithm becomes more robust i will publish it hoping it helps
-        new developers to practice their frontend skill with react.
+        new developers to practice their frontend skill with react. One problem
+        it doesn't resolve yet, is create the webpack configuration file with
+        the correct alias and plugins to make this works completely.
       </Typography>
     </Box>
   );

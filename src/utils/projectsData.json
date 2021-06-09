@@ -1,8 +1,8 @@
 {
   "results": [
     {
-      "desktop": "./projects/BACSM-desktop-design.jpg",
-      "mobile": "./projects/BACSM-mobile-design.jpg",
+      "desktop": "/projects/BACSM-desktop-design.jpg",
+      "mobile": "/projects/BACSM-mobile-design.jpg",
       "id": "BACSM",
       "title": "Base Apparel Coming Soon Master",
       "path": "/projects/BACSM"

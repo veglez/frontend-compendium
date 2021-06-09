@@ -1,11 +1,11 @@
 import { ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
 import React from 'react';
-import { RiArrowDropRightFill } from 'react-icons/ri';
+import { BsCircleFill } from 'react-icons/bs';
 const Item = ({ iconSize, mainContent, classes, extra }) => {
   return (
     <ListItem divider dense>
       <ListItemIcon>
-        <RiArrowDropRightFill size={iconSize} />
+        <BsCircleFill size={iconSize} />
       </ListItemIcon>
       <ListItemText
         primary={React.createElement(mainContent, {
