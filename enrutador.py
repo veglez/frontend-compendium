@@ -12,7 +12,7 @@ dinamicImport = 'import {0} from "@pages/{0}"'
 dinamic_page_imports= ''
 
 
-frontendMentor_folders = Path('/home/veglez/Projects/frontend/frontendmentor/newTest')
+frontendMentor_folders = Path('/home/veglez/Projects/frontend/frontendmentor')
 
 #dirección del proyecto
 actual = Path(os.path.realpath(__file__)).parent

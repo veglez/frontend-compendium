@@ -2,16 +2,12 @@ import {
   Box,
   GridList,
   GridListTile,
-  GridListTileBar,
-  IconButton,
   ListSubheader,
   Typography,
   useMediaQuery,
   useTheme,
 } from '@material-ui/core';
-import { Info } from '@material-ui/icons';
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import data from '../../../utils/projectsData.json';
 import CardProject from '../CardProject/CardProject';
 import { useProjects } from './projectsStyles';
@@ -23,10 +19,9 @@ const ListOfProjects = () => {
   const tablet = useMediaQuery(theme.breakpoints.up('md'));
   const desktop = useMediaQuery(theme.breakpoints.up('lg'));
   const results = data.results;
-  const [show, setShow] = useState(false);
 
   return (
-    <Box>
+    <Box className={classes.container}>
       <Typography variant='h6' component='h2'>
         List of projects
       </Typography>
@@ -42,7 +37,16 @@ const ListOfProjects = () => {
           style={{ height: 'auto' }}
         >
           <ListSubheader component='div'>
-            Projects Belongs to the same bundle
+            All existing exercises can be found{' '}
+            <Typography
+              className={classes.externalLink}
+              color='primary'
+              component='a'
+              target='__blank'
+              href='https://www.frontendmentor.io/challenges'
+            >
+              here
+            </Typography>
           </ListSubheader>
         </GridListTile>
         {results.map((tile) => {

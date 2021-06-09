@@ -1,6 +1,7 @@
 import { Typography } from '@material-ui/core';
 import React from 'react';
 import { useIntro } from './introduction';
+
 const Introduction = () => {
   const classes = useIntro();
   return (
@@ -9,12 +10,21 @@ const Introduction = () => {
         Introduction
       </Typography>
       <Typography>
-        Frontendmentor.io is a page known for publishing web page designs so
-        that those of us who enter the world of the frontend can practice our
-        learned skills. It is an excellent site with challenges of varying
-        degrees of difficulty, although almost all the exercises are on a single
-        page; That is why it occurred to me to put them all together in a single
-        project in order to practice page routing just like on a real website.
+        <Typography
+          color='primary'
+          component={'a'}
+          href='https://www.frontendmentor.io/challenges'
+          target='__blank'
+          className={classes.externalLink}
+        >
+          Frontendmentor.io
+        </Typography>{' '}
+        is a page known for publishing web page designs so that those of us who
+        enter the world of the frontend can practice our learned skills. It is
+        an excellent site with challenges of varying degrees of difficulty,
+        although almost all the exercises are on a single page; That is why it
+        occurred to me to put them all together in a single project in order to
+        practice page routing just like on a real website.
       </Typography>
 
       <Typography>

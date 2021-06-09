@@ -7,9 +7,17 @@ export const homeStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center',
     gap: theme.spacing(8),
-    padding: theme.spacing(2, 6),
+    margin: '50px auto',
+    width: '75vw',
+    '@media screen and (max-width:600px )': {
+      width: '90vw',
+    },
   },
   mainH1: {
     textAlign: 'center',
+  },
+
+  buttonText: {
+    color: 'white',
   },
 }));

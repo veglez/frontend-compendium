@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core';
 
-export const useExplanation = makeStyles({
+export const useExplanation = makeStyles((theme) => ({
   modalImg: {
     position: 'absolute',
     top: '50%',
@@ -13,4 +13,7 @@ export const useExplanation = makeStyles({
     // wordBreak: 'break-word',
     overflowWrap: 'break-word',
   },
-});
+  extra: {
+    margin: theme.spacing(4, 0),
+  },
+}));

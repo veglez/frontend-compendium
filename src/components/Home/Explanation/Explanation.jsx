@@ -44,7 +44,7 @@ const Explanation = () => {
           className={classes2.modalImg}
         />
       </Modal>
-      <Box>
+      <Box className={classes2.extra}>
         <Typography>Now the fun part &#x1F601; </Typography>
         <Typography>
           Since this will continue growing it should be scalable, also{' '}
@@ -108,7 +108,7 @@ const Explanation = () => {
         When the algorithm becomes more robust i will publish it hoping it helps
         new developers to practice their frontend skill with react. One problem
         it doesn't resolve yet, is create the webpack configuration file with
-        the correct alias and plugins to make this works completely.
+        the correct alias and plugins to make this works propertly.
       </Typography>
     </Box>
   );

@@ -1,17 +1,17 @@
-import { GitHub, Web } from '@material-ui/icons';
+import { IconButton } from '@material-ui/core';
+import { BsEyeFill } from 'react-icons/bs';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useCardProject } from './styles_CardProject';
+import { useCardProject } from './styles_CardMessage';
 
 const Message = ({ projectName, path }) => {
   const classes = useCardProject();
   return (
     <div className={classes.message}>
       <span>{projectName}</span>
-      <GitHub />
-      <Link to={path}>
-        <Web />
-      </Link>
+      <IconButton component={Link} to={path}>
+        <BsEyeFill color='f2f2f2' />
+      </IconButton>
     </div>
   );
 };

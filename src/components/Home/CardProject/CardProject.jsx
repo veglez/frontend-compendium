@@ -1,7 +1,6 @@
 import { GridListTile, GridListTileBar, IconButton } from '@material-ui/core';
 import { Info } from '@material-ui/icons';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import Message from './Message';
 
 const CardProject = ({ tile, styles, desktopViewporFlag, ...rest }) => {
@@ -23,6 +22,7 @@ const CardProject = ({ tile, styles, desktopViewporFlag, ...rest }) => {
       <GridListTileBar
         classes={{ root: styles.tileBar }}
         title={tile.title}
+        actionPosition='left'
         actionIcon={
           <IconButton
             aria-label={`info about ${tile.title}`}

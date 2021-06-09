@@ -35,6 +35,8 @@
     "@babel/core": "^7.13.10",
     "@babel/preset-env": "^7.13.12",
     "@babel/preset-react": "^7.12.13",
+    "@iconify/icons-noto": "^1.1.2",
+    "@iconify/react": "^1.1.4",
     "@svgr/webpack": "^5.5.0",
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^9.0.0",

@@ -1,11 +1,11 @@
 import React from 'react';
-import { Typography } from '@material-ui/core';
+import { Button, Typography } from '@material-ui/core';
 
 import { homeStyles } from '../styles-material/home';
 
-import ListOfProjects from '../components/Home/ListOfProjects/ListOfProjects';
 import Introduction from '../components/Home/Introduction/Introduction';
 import Explanation from '../components/Home/Explanation/Explanation';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const classes = homeStyles();
@@ -17,7 +17,16 @@ const Home = () => {
       </Typography>
       <Introduction />
       <Explanation />
-      <ListOfProjects />
+      <Button
+        variant='contained'
+        color='primary'
+        component={Link}
+        to='/projects'
+      >
+        <Typography classes={{ root: classes.buttonText }}>
+          Let's see the projects
+        </Typography>
+      </Button>
     </main>
   );
 };
