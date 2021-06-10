@@ -4,6 +4,8 @@ import Home from '@pages/Home';
 import routes from './utils/routes';
 import Navbar from '@components/Navbar/Navbar';
 import ListOfProjects from '@components/Home/ListOfProjects/ListOfProjects';
+import NotFound from './pages/NotFound';
+import About from './pages/About';
 
 const App = () => {
   return (
@@ -13,6 +15,8 @@ const App = () => {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/projects' component={ListOfProjects} />
+          <Route exact path='/about' component={About} />
+
           {routes.map((project) => {
             return (
               <Route
@@ -23,6 +27,7 @@ const App = () => {
               />
             );
           })}
+          <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
     </div>

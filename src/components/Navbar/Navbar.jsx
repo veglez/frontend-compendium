@@ -16,15 +16,16 @@ import { Menu } from '@material-ui/icons';
 import { Icon } from '@iconify/react';
 import bookmarkTabs from '@iconify/icons-noto/bookmark-tabs';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import BackToTop from '../BackToTop/BackToTop';
 
 const useStyles = makeStyles((theme) => ({
   homeIcon: {
     color: theme.palette.common.white,
     fontSize: 32,
-
-    justifyContent: 'flex-start',
+  },
+  label: {
+    gap: theme.spacing(1),
   },
   whiteSpace: {
     display: 'flex',
@@ -38,11 +39,20 @@ const Navbar = () => {
   const theme = useTheme();
   const tablet = useMediaQuery(theme.breakpoints.down('sm'));
   const [open, setOpen] = useState(false);
+  const current = useHistory();
+  const path = current.location.pathname.split('/');
+  console.log(path);
+
   return (
     <>
       <AppBar position='relative'>
         <Toolbar id='back-to-top-anchor'>
-          <Button className={classes.homeIcon} component={Link} to='/'>
+          <Button
+            classes={{ label: classes.label }}
+            className={classes.homeIcon}
+            component={Link}
+            to='/'
+          >
             <Icon icon={bookmarkTabs} />
             <Typography>Compedium</Typography>
           </Button>
@@ -88,6 +98,13 @@ const Navbar = () => {
           )}
         </Toolbar>
       </AppBar>
+      {path.length > 2 && path[1] === 'projects' && (
+        <Toolbar>
+          <Button variant='contained' onClick={current.goBack}>
+            Go back
+          </Button>
+        </Toolbar>
+      )}
       <BackToTop />
     </>
   );
