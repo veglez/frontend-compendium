@@ -5,6 +5,7 @@ export const Lista = styled.ul`
   color: hsl(237, 17%, 21%);
   font-weight: 700;
   margin-inline-end: 5px;
+  min-width: 15ch;
 
   &:focus {
     outline: none;

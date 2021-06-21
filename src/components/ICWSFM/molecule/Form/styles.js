@@ -16,7 +16,7 @@ export const StyledForm = styled.form`
 
 export const Msg = styled.p`
   color: hsl(246, 25%, 77%);
-  font-size: 1.3rem;
+  font-size: 1em;
   text-align: center;
   a,
   a:visited {

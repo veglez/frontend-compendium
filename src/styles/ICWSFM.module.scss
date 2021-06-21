@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   background: hsl(0, 100%, 74%) url('@images/ICWSFM/bg-intro-mobile.png');
-
+  padding: 2em;
   font-family: 'Poppins';
   font-size: 16px;
 }
@@ -13,10 +13,10 @@
 .main {
   display: flex;
   flex-wrap: wrap;
-  // align-items: center;
+  align-items: center;
   justify-content: center;
   gap: 20px;
-  width: 85%;
+  width: 100%;
   text-align: center;
   color: white;
 }
@@ -24,6 +24,7 @@
 .header {
   padding-top: 75px;
   margin-bottom: 20px;
+  max-width: 600px;
 
   h1 {
     font-weight: 700;

@@ -9,7 +9,7 @@ export const PriceButton = styled.button`
   border: none;
   border-radius: 5px;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.2em;
   font-weight: 400;
   box-shadow: 0 5px rgba(0, 0, 0, 0.2);
 

@@ -10,7 +10,7 @@ export const StyledButtonForm = styled.button`
   border-bottom: 4px solid hsl(154, 59%, 45%);
   overflow: hidden;
   color: white;
-  font-size: 1.6rem;
+  font-size: 1.2em;
   font-weight: 600;
   text-transform: uppercase;
 

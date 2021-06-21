@@ -12,6 +12,7 @@ export const useProjects = makeStyles((theme) => ({
   tileBar: {
     zIndex: 50,
     background: 'rgba(200,0,85)',
+    cursor: 'pointer',
   },
   externalLink: {
     color: `${theme.palette.primary.main} !important`,

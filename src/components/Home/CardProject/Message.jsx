@@ -1,5 +1,4 @@
-import { IconButton } from '@material-ui/core';
-import { BsEyeFill } from 'react-icons/bs';
+import {  Button } from '@material-ui/core';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCardProject } from './styles_CardMessage';
@@ -9,9 +8,7 @@ const Message = ({ projectName, path }) => {
   return (
     <div className={classes.message}>
       <span>{projectName}</span>
-      <IconButton component={Link} to={path}>
-        <BsEyeFill color='f2f2f2' />
-      </IconButton>
+      <Button variant={'contained'} color='secondary' component={Link} to={path}>See the page</Button>
     </div>
   );
 };

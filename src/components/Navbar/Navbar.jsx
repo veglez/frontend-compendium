@@ -16,7 +16,7 @@ import { Menu } from '@material-ui/icons';
 import { Icon } from '@iconify/react';
 import bookmarkTabs from '@iconify/icons-noto/bookmark-tabs';
 import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import BackToTop from '../BackToTop/BackToTop';
 
 const useStyles = makeStyles((theme) => ({
@@ -39,9 +39,6 @@ const Navbar = () => {
   const theme = useTheme();
   const tablet = useMediaQuery(theme.breakpoints.down('sm'));
   const [open, setOpen] = useState(false);
-  const current = useHistory();
-  const path = current.location.pathname.split('/');
-  console.log(path);
 
   return (
     <>
@@ -98,13 +95,6 @@ const Navbar = () => {
           )}
         </Toolbar>
       </AppBar>
-      {path.length > 2 && path[1] === 'projects' && (
-        <Toolbar>
-          <Button variant='contained' onClick={current.goBack}>
-            Go back
-          </Button>
-        </Toolbar>
-      )}
       <BackToTop />
     </>
   );

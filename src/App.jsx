@@ -16,7 +16,6 @@ const App = () => {
           <Route exact path='/' component={Home} />
           <Route exact path='/projects' component={ListOfProjects} />
           <Route exact path='/about' component={About} />
-
           {routes.map((project) => {
             return (
               <Route

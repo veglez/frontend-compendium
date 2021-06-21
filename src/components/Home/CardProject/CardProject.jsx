@@ -22,11 +22,12 @@ const CardProject = ({ tile, styles, desktopViewporFlag, ...rest }) => {
       <GridListTileBar
         classes={{ root: styles.tileBar }}
         title={tile.title}
+        onClick={() => setShow(!show)}
         actionPosition='left'
         actionIcon={
           <IconButton
             aria-label={`info about ${tile.title}`}
-            onClick={() => setShow(!show)}
+            
           >
             <Info />
           </IconButton>
